@@ -21,8 +21,8 @@ void loop() {
   int x = analogRead(X_AxisPin);  // Read the x-axis position
   int y = analogRead(Y_AxisPin);  // Read the y-axis position
 
-  moveLeft.set(x < JoyCenter - JoyDeadzone);  // If the joystick value exceeds the the deadzone value in a given direction, press the coresponding directional key
-  moveRight.set(x > JoyCenter + JoyDeadzone);
-  moveForward.set(y < JoyCenter - JoyDeadzone);
-  moveBackward.set(y > JoyCenter + JoyDeadzone);
+  moveLeft.set(x < JoystickCenter - JoystickDeadzone);  // If the joystick value exceeds the the deadzone value in a given direction, press the coresponding directional key
+  moveRight.set(x > JoystickCenter + JoystickDeadzone);
+  moveForward.set(y < JoystickCenter - JoystickDeadzone);
+  moveBackward.set(y > JoystickCenter + JoystickDeadzone);
 }
