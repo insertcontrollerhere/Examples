@@ -9,8 +9,8 @@ const int JoystickCenter   = 1023 / 2;  // The center value of the potentiometer
 const int JoystickDeadzone = 50;  // Sets the deadzone for the joystick (any readings +/- the value of this setting from the center will be ignored)
 
 KeyboardButton moveForward('w'); // Creates a relationship between the joystick and the keystrokes
-KeyboardButton moveLeft('a');
 KeyboardButton moveBackward('s');
+KeyboardButton moveLeft('a');
 KeyboardButton moveRight('d');
 
 void setup() {
@@ -21,8 +21,8 @@ void loop() {
   int x = analogRead(X_AxisPin);  // Read the x-axis position
   int y = analogRead(Y_AxisPin);  // Read the y-axis position
 
-  moveLeft.set(x < JoystickCenter - JoystickDeadzone);  // If the joystick value exceeds the the deadzone value in a given direction, press the coresponding directional key
-  moveRight.set(x > JoystickCenter + JoystickDeadzone);
-  moveForward.set(y < JoystickCenter - JoystickDeadzone);
+  moveForward.set(y < JoystickCenter - JoystickDeadzone);  // If the joystick value exceeds the the deadzone value in a given direction, press the coresponding directional key
   moveBackward.set(y > JoystickCenter + JoystickDeadzone);
+  moveLeft.set(x < JoystickCenter - JoystickDeadzone);
+  moveRight.set(x > JoystickCenter + JoystickDeadzone);
 }
